@@ -35,10 +35,12 @@ const foodSchema = new mongoose.Schema({
     min: 0,
     max: 5,
   },
+
+  // ✅ FIXED: allow string-based restaurant IDs like "1234"
   restaurants: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Restaurant',
-  }],
+    type: String,
+    required: true,
+  }]
 });
 
-export default mongoose.models.Food || mongoose.model('Food', foodSchema); 
+export default mongoose.models.Food || mongoose.model('Food', foodSchema);

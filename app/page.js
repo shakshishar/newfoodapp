@@ -151,7 +151,7 @@ export default function Home() {
             {restaurants.map((restaurant) => (
               <a
                 key={restaurant._id}
-                href={`/restaurant/${restaurant._id}`}
+                href={`/restaurant/${restaurant.id}`}
                 className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <div className="relative">

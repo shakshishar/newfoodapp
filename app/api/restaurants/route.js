@@ -8,12 +8,12 @@ export async function GET(request) {
     
     const { searchParams } = new URL(request.url);
     const search = searchParams.get('search');
-    const _id = searchParams.get('_id');
+    const id = searchParams.get('id');
     
     let query = {};
     
-    if (_id) {
-      query._id = _id;
+    if (id) {
+      query.id = id;
     }
     
     if (search) {

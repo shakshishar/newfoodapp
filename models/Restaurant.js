@@ -1,6 +1,11 @@
+// models/Restaurant.js
 import mongoose from 'mongoose';
 
 const restaurantSchema = new mongoose.Schema({
+  _id: {
+    type: String,  // 🔄 Force `_id` to be a string (e.g. "1234")
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -29,4 +34,4 @@ const restaurantSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.Restaurant || mongoose.model('Restaurant', restaurantSchema); 
+export default mongoose.models.Restaurant || mongoose.model('Restaurant', restaurantSchema);
