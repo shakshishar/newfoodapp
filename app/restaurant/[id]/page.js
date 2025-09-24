@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 export default function RestaurantPage() {
   const { id } = useParams();
@@ -51,7 +52,7 @@ export default function RestaurantPage() {
       const response = await fetch(`/api/restaurants?id=${id}`);
       if (!response.ok) throw new Error('Failed to fetch restaurant');
       const data = await response.json();
-      console.log('Restaurant data:', data); // Debug log
+      // console.log('Restaurant data:', data); // Debug log
       if (data && data.length > 0) {
         setRestaurant(data[0]);
       } else {
@@ -65,23 +66,23 @@ export default function RestaurantPage() {
 
  const fetchFoods = async () => {
   try {
-    console.log('Fetching foods for restaurant:', id);
+    // console.log('Fetching foods for restaurant:', id);
     
     // Construct the URL properly
     const url = `/api/foods?restaurantId=${encodeURIComponent(id)}${search ? `&search=${encodeURIComponent(search)}` : ''}`;
-    console.log('API URL:', url);
+    // console.log('API URL:', url);
     
     const response = await fetch(url);
     
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Response not OK:', response.status, errorText);
+      // console.error('Response not OK:', response.status, errorText);
       throw new Error(`Failed to fetch menu items: ${response.status} ${errorText}`);
     }
     
     const data = await response.json();
-    console.log('Foods response:', data);
-    console.log('Number of foods received:', data.length);
+    // console.log('Foods response:', data);
+    // console.log('Number of foods received:', data.length);
     
     setFoods(data);
   } catch (error) {
@@ -137,7 +138,7 @@ export default function RestaurantPage() {
     <div>
       <div className="mb-8">
         <div className="relative h-64 mb-6">
-          <img
+          <image
             src={restaurant.image}
             alt={restaurant.name}
             className="w-full h-full object-cover rounded-lg"
@@ -176,7 +177,7 @@ export default function RestaurantPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {foods.map((food) => (
               <div key={food._id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img
+                <image
                   src={food.image}
                   alt={food.name}
                   className="w-full h-48 object-cover"

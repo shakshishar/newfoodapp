@@ -50,7 +50,7 @@ export default function WishlistPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {wishlist.map((food) => (
           <div key={food._id} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
+            <image
               src={food.image}
               alt={food.name}
               className="w-full h-48 object-cover"

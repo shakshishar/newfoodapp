@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ShoppingCartIcon, MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 export default function CartPage() {
   const [cart, setCart] = useState([]);
@@ -57,10 +58,12 @@ export default function CartPage() {
             {cart.map((item) => (
               <div key={item._id} className="p-4 border-b last:border-b-0">
                 <div className="flex items-center">
-                  <img
+                   <Image
                     src={item.image}
                     alt={item.name}
-                    className="w-24 h-24 object-cover rounded-lg"
+                    width={96}   // same as w-24
+                    height={96}  // same as h-24
+                    className="object-cover rounded-lg"
                   />
                   <div className="ml-4 flex-grow">
                     <h3 className="text-lg font-semibold text-gray-900">{item.name}</h3>

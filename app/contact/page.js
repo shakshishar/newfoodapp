@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,17 +38,18 @@ export default function ContactPage() {
       {/* Header */}
       <div className="relative bg-orange-500">
         <div className="absolute inset-0">
-          <img
+          <image
             className="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
             alt="Contact us"
+            fill
           />
           <div className="absolute inset-0 bg-orange-500 mix-blend-multiply" />
         </div>
         <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Contact Us</h1>
           <p className="mt-6 text-xl text-orange-100 max-w-3xl">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We would love to hear from you. Send us a message and we will respond as soon as possible.
           </p>
         </div>
       </div>
@@ -59,7 +61,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               <h2 className="text-2xl font-bold text-gray-900">Get in touch</h2>
               <p className="text-gray-500">
-                Have questions about our service? Want to partner with us? We're here to help!
+                Have questions about our service? Want to partner with us? We are here to help!
               </p>
 
               <div className="space-y-6">

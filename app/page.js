@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { MagnifyingGlassIcon, ClockIcon, TruckIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 export default function Home() {
   const [restaurants, setRestaurants] = useState([]);
@@ -56,7 +57,7 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
+          <image
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
             alt="Delicious food"
@@ -155,7 +156,7 @@ export default function Home() {
                 className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <div className="relative">
-                  <img
+                  <image
                     src={restaurant.image}
                     alt={restaurant.name}
                     className="w-full h-48 object-cover"
